@@ -46,7 +46,6 @@ export default function Subjects() {
     },
   ]
   
-  console.log(subs)
   return (
     <div className='flex justify-center items-center w-full h-[65em] md:h-full lg:h-full bg-base-300'>
       <div className='pt-16 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-10 gap-y-5 lg:gap-20 lg:gap-y-10'>
