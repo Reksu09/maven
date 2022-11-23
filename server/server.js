@@ -106,6 +106,6 @@ app.use("/subjects", Cosc50Router);
 app.use("/subjects", Fitt1Router);
 
 
-app.listen(process.env.PORT || 8080, () => {
+app.listen(process.env.PORT || 5000, () => {
     console.log(`AdminJS started on http://localhost:8080${adminJs.options.rootPath}`);
 })
