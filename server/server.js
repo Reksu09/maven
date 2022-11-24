@@ -10,6 +10,7 @@ const Dcit21 = require("./models/dcit21.model.js");
 const Dcit22 = require("./models/dcit22.model.js");
 const Cosc50 = require("./models/cosc50.model.js");
 const Fitt1 = require("./models/fitt1.model.js");
+const URI = `mongodb+srv://${process.env.USER}@reviewer-website.locq5xx.mongodb.net/?retryWrites=true&w=majority`
 
 const subs = [
     {
@@ -66,7 +67,12 @@ const router = AdminJSExpress.buildAuthenticatedRouter(
             return null
         },
     },
-    null
+    null,
+    // Add configuration required by the express-session plugin.
+    {
+        resave: false, 
+        saveUninitialized: true,
+    }
 );
 
 app.use(adminJs.options.rootPath, router);
@@ -76,9 +82,7 @@ app.use(adminJs.options.rootPath, router);
 
 app.use(cors());
 app.use(express.json());
-
-const uri = process.env.URI;
-mongoose.connect(uri, { useNewUrlParser: true });
+mongoose.connect(URI, { useNewUrlParser: true });
 const connection = mongoose.connection;
 connection.once("open", () => {
     console.log("Connected to MongoDB");
