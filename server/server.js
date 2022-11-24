@@ -66,12 +66,7 @@ const router = AdminJSExpress.buildAuthenticatedRouter(
             return null
         },
     },
-    null,
-    // Add configuration required by the express-session plugin.
-    {
-        resave: false, 
-        saveUninitialized: true,
-    }
+    null
 );
 
 app.use(adminJs.options.rootPath, router);
