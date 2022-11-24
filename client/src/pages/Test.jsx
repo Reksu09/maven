@@ -22,7 +22,7 @@ function Test() {
     }, []);    
     
     useEffect(() => {
-        axios.get(`http://localhost:${process.env.PORT}/subjects/${subject}/${type}`)
+        axios.get(`https://maven.herokuapp.com/subjects/${subject}/${type}`)
         .then(data => setTest(data.data))
         .catch(error => console.log(error));
 
