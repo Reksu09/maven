@@ -12,6 +12,11 @@ const Cosc50 = require("./models/cosc50.model.js");
 const Fitt1 = require("./models/fitt1.model.js");
 const URI = `mongodb+srv://${process.env.USER}@reviewer-website.locq5xx.mongodb.net/?retryWrites=true&w=majority`
 
+app.use('/', express.static(path.join(__dirname, '/client/build')));
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '/client/build', 'index.html'));
+  });
+
 const subs = [
     {
         resource: Gned02
