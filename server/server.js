@@ -16,7 +16,7 @@ const URI = `mongodb+srv://${process.env.USER}@reviewer-website.locq5xx.mongodb.
 app.use('/', express.static(path.join(__dirname, '../client/build')));
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
-  });
+});
 
 const subs = [
     {

@@ -14,13 +14,13 @@ function Score() {
     const [subjects, setSubjects] = useState(["Identification", "Enumeration", "Fill"])
 
     useEffect(() => {
-        axios.get(`http://localhost:8080/subjects/${subject}/identification`)
+        axios.get(`http://localhost:${process.env.PORT}/subjects/${subject}/identification`)
             .then(data => setIdCorrectAnswer(data.data))
             .catch(error => console.log(error));
-        axios.get(`http://localhost:8080/subjects/${subject}/enumeration`)
+        axios.get(`http://localhost:${process.env.PORT}/subjects/${subject}/enumeration`)
             .then(data => setEnumCorrectAnswer(data.data))
             .catch(error => console.log(error));
-        axios.get(`http://localhost:8080/subjects/${subject}/fill`)
+        axios.get(`http://localhost:${process.env.PORT}/subjects/${subject}/fill`)
             .then(data => setFillCorrectAnswer(data.data))
             .catch(error => console.log(error));
 

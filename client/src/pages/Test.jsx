@@ -22,7 +22,7 @@ function Test() {
     }, []);    
     
     useEffect(() => {
-        axios.get(`http://localhost:8080/subjects/${subject}/${type}`)
+        axios.get(`http://localhost:${process.env.PORT}/subjects/${subject}/${type}`)
         .then(data => setTest(data.data))
         .catch(error => console.log(error));
 
