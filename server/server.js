@@ -1,6 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
+const path = require("path");
 const mongoose = require("mongoose");
 require("dotenv").config()
 const Gned02 = require("./models/gned02.model.js");
