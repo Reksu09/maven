@@ -1,7 +1,6 @@
 const express = require("express");
 const cors = require("cors");
 const app = express();
-const path = require("path");
 const mongoose = require("mongoose");
 require("dotenv").config()
 const Gned02 = require("./models/gned02.model.js");
@@ -12,11 +11,6 @@ const Dcit22 = require("./models/dcit22.model.js");
 const Cosc50 = require("./models/cosc50.model.js");
 const Fitt1 = require("./models/fitt1.model.js");
 const URI = `mongodb+srv://${process.env.USER}@reviewer-website.locq5xx.mongodb.net/?retryWrites=true&w=majority`
-
-app.use('/', express.static(path.join(__dirname, '../client/build')));
-app.get('*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
-});
 
 const subs = [
     {
