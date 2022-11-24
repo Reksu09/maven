@@ -65,6 +65,7 @@ function Test() {
         }
     }
     
+    console.log(process.env.PORT)
 
     return (
         <div>
