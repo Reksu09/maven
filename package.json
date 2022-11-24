@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/Reksu09/maven/issues"
   },
-  "homepage": "https://github.com/Reksu09/maven#readme"
+  "homepage": "https://github.com/Reksu09/maven#readme",
+  "dependencies": {
+    "nodemon": "^2.0.20"
+  }
 }
